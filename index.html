@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mèches Divine - Vente de mèches de qualité au Bénin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cart-item {
+            transition: all 0.3s ease;
+        }
+        
+        .cart-item:hover {
+            background-color: #f8f9fa;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-cut text-purple-600 text-2xl mr-2"></i>
+                <a href="#" class="text-xl font-bold text-purple-600">Mèches Divine</a>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#accueil" class="text-gray-700 hover:text-purple-600 transition">Accueil</a>
+                <a href="#produits" class="text-gray-700 hover:text-purple-600 transition">Produits</a>
+                <a href="#avantages" class="text-gray-700 hover:text-purple-600 transition">Avantages</a>
+                <a href="#temoignages" class="text-gray-700 hover:text-purple-600 transition">Témoignages</a>
+                <a href="#contact" class="text-gray-700 hover:text-purple-600 transition">Contact</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <button id="cart-btn" class="relative text-gray-700 hover:text-purple-600">
+                    <i class="fas fa-shopping-cart text-xl"></i>
+                    <span id="cart-count" class="absolute -top-2 -right-2 bg-purple-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                </button>
+                
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 shadow-lg">
+            <a href="#accueil" class="block py-2 text-gray-700 hover:text-purple-600">Accueil</a>
+            <a href="#produits" class="block py-2 text-gray-700 hover:text-purple-600">Produits</a>
+            <a href="#avantages" class="block py-2 text-gray-700 hover:text-purple-600">Avantages</a>
+            <a href="#temoignages" class="block py-2 text-gray-700 hover:text-purple-600">Témoignages</a>
+            <a href="#contact" class="block py-2 text-gray-700 hover:text-purple-600">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero min-h-screen flex items-center text-white">
+        <div class="container mx-auto px-4 text-center fade-in">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Mèches de Qualité au Bénin</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Découvrez notre collection exclusive de mèches naturelles et synthétiques pour toutes vos coiffures</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#produits" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">Voir les produits</a>
+                <a href="#contact" class="bg-transparent hover:bg-white hover:text-purple-600 text-white font-bold py-3 px-8 border-2 border-white rounded-full transition duration-300">Nous contacter</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="produits" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Nos Mèches Populaires</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Mèches brésiliennes" class="w-full h-64 object-cover">
+                        <div class="absolute top-2 right-2 bg-purple-600 text-white text-xs font-bold px-2 py-1 rounded">Nouveau</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Mèches Brésiliennes</h3>
+                        <p class="text-gray-600 mb-4">Mèches 100% naturelles, douces et brillantes</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-600 font-bold">8,500 FCFA</span>
+                            <button class="add-to-cart bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-full transition" data-id="1" data-name="Mèches Brésiliennes" data-price="8500">
+                                <i class="fas fa-cart-plus"></i> Ajouter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Mèches malaisiennes" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Mèches Malaisiennes</h3>
+                        <p class="text-gray-600 mb-4">Texture soyeuse et résistante à la chaleur</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-600 font-bold">9,500 FCFA</span>
+                            <button class="add-to-cart bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-full transition" data-id="2" data-name="Mèches Malaisiennes" data-price="9500">
+                                <i class="fas fa-cart-plus"></i> Ajouter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Mèches péruviennes" class="w-full h-64 object-cover">
+                        <div class="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">Promo</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Mèches Péruviennes</h3>
+                        <p class="text-gray-600 mb-4">Volume exceptionnel et légèreté incomparable</p>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-red-500 line-through mr-2">12,000 FCFA</span>
+                                <span class="text-purple-600 font-bold">10,500 FCFA</span>
+                            </div>
+                            <button class="add-to-cart bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-full transition" data-id="3" data-name="Mèches Péruviennes" data-price="10500">
+                                <i class="fas fa-cart-plus"></i> Ajouter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1559599101-f09722fb4948?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="Mèches synthétiques" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Mèches Synthétiques</h3>
+                        <p class="text-gray-600 mb-4">Économiques et disponibles en plusieurs couleurs</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-600 font-bold">5,500 FCFA</span>
+                            <button class="add-to-cart bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-full transition" data-id="4" data-name="Mèches Synthétiques" data-price="5500">
+                                <i class="fas fa-cart-plus"></i> Ajouter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white font-bold py-3 px-8 rounded-full transition duration-300">
+                    Voir toute la collection
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="avantages" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Pourquoi choisir nos mèches ?</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-purple-600 text-4xl mb-4">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Qualité Premium</h3>
+                    <p class="text-gray-600">Nos mèches sont sélectionnées parmi les meilleures matières premières pour garantir durabilité et confort.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-purple-600 text-4xl mb-4">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Livraison Rapide</h3>
+                    <p class="text-gray-600">Livraison express dans tout le Bénin sous 48h. Retrait possible à Cotonou, Porto-Novo et Parakou.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-purple-600 text-4xl mb-4">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Support Client</h3>
+                    <p class="text-gray-600">Notre équipe est disponible 7j/7 pour répondre à vos questions et vous conseiller.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="temoignages" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Ce que disent nos clientes</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Les mèches brésiliennes sont incroyablement douces et naturelles. Je les utilise depuis 3 mois et elles tiennent parfaitement."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Amina" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-semibold">Amina D.</h4>
+                            <p class="text-sm text-gray-500">Cotonou</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Livraison ultra rapide! Les mèches malaisiennes sont parfaites pour les brushings. Je recommande vivement!"</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Fatou" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-semibold">Fatou K.</h4>
+                            <p class="text-sm text-gray-500">Porto-Novo</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Le rapport qualité-prix est excellent. Les mèches synthétiques sont parfaites pour essayer de nouvelles couleurs sans se ruiner."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Jessica" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-semibold">Jessica T.</h4>
+                            <p class="text-sm text-gray-500">Parakou</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-purple-600 text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Contactez-nous</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Informations de contact</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                            <p>123 Avenue Steinmetz, Cotonou, Bénin</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3"></i>
+                            <p>+229 61 23 45 67</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope mr-3"></i>
+                            <p>contact@mechesdivine.bj</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fab fa-whatsapp mr-3"></i>
+                            <p>+229 97 89 56 32 (Commandes WhatsApp)</p>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-semibold mt-8 mb-4">Heures d'ouverture</h3>
+                    <div class="space-y-2">
+                        <p>Lundi - Vendredi: 8h - 18h</p>
+                        <p>Samedi: 9h - 15h</p>
+                        <p>Dimanche: Fermé</p>
+                    </div>
+                    
+                    <div class="mt-8 flex space-x-4">
+                        <a href="#" class="bg-white text-purple-600 hover:bg-gray-100 rounded-full w-10 h-10 flex items-center justify-center">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-white text-purple-600 hover:bg-gray-100 rounded-full w-10 h-10 flex items-center justify-center">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-white text-purple-600 hover:bg-gray-100 rounded-full w-10 h-10 flex items-center justify-center">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <label for="name" class="block mb-1">Nom complet</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 rounded bg-purple-500 border border-purple-400 text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-white" placeholder="Votre nom">
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-1">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 rounded bg-purple-500 border border-purple-400 text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-white" placeholder="Votre email">
+                        </div>
+                        <div>
+                            <label for="phone" class="block mb-1">Téléphone</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-2 rounded bg-purple-500 border border-purple-400 text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-white" placeholder="Votre numéro">
+                        </div>
+                        <div>
+                            <label for="message" class="block mb-1">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 rounded bg-purple-500 border border-purple-400 text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-white" placeholder="Votre message"></textarea>
+                        </div>
+                        <button type="submit" class="bg-white text-purple-600 hover:bg-gray-100 font-bold py-3 px-6 rounded-full transition duration-300">
+                            Envoyer le message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg shadow-xl max-w-md w-full max-h-[80vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-xl font-bold text-gray-800">Votre Panier</h3>
+                    <button id="close-cart" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div id="cart-items" class="space-y-4 mb-6">
+                    <!-- Cart items will be added here dynamically -->
+                    <p id="empty-cart-message" class="text-gray-500 text-center py-4">Votre panier est vide</p>
+                </div>
+                
+                <div class="border-t border-gray-200 pt-4 mb-6">
+                    <div class="flex justify-between mb-2">
+                        <span class="font-semibold">Total:</span>
+                        <span id="cart-total" class="font-bold">0 FCFA</span>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col space-y-3">
+                    <button id="checkout-btn" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded-full transition disabled:opacity-50" disabled>
+                        Passer la commande
+                    </button>
+                    <button id="continue-shopping" class="border-2 border-purple-600 text-purple-600 hover:bg-purple-50 font-bold py-3 px-4 rounded-full transition">
+                        Continuer mes achats
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Mèches Divine</h3>
+                    <p class="text-gray-400">Votre boutique en ligne de mèches de qualité au Bénin. Livraison dans tout le pays.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Liens rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#accueil" class="text-gray-400 hover:text-white transition">Accueil</a></li>
+                        <li><a href="#produits" class="text-gray-400 hover:text-white transition">Produits</a></li>
+                        <li><a href="#avantages" class="text-gray-400 hover:text-white transition">Avantages</a></li>
+                        <li><a href="#temoignages" class="text-gray-400 hover:text-white transition">Témoignages</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Modes de paiement</h4>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="bg-white text-blue-500 p-2 rounded">
+                            <i class="fab fa-cc-mastercard text-2xl"></i>
+                        </div>
+                        <div class="bg-white text-blue-400 p-2 rounded">
+                            <i class="fab fa-cc-visa text-2xl"></i>
+                        </div>
+                        <div class="bg-white text-black p-2 rounded">
+                            <i class="fas fa-mobile-alt text-2xl"></i>
+                        </div>
+                        <div class="bg-yellow-500 text-white p-2 rounded">
+                            <i class="fas fa-money-bill-wave text-2xl"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mt-3">Paiement à la livraison disponible</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-3">Abonnez-vous pour recevoir nos offres spéciales</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Votre email" class="px-3 py-2 rounded-l text-gray-800 w-full focus:outline-none">
+                        <button type="submit" class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-r">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p>&copy; 2023 Mèches Divine. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                mobileMenu.classList.add('hidden');
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Cart functionality
+        const cartBtn = document.getElementById('cart-btn');
+        const cartModal = document.getElementById('cart-modal');
+        const closeCart = document.getElementById('close-cart');
+        const continueShopping = document.getElementById('continue-shopping');
+        const cartItemsContainer = document.getElementById('cart-items');
+        const emptyCartMessage = document.getElementById('empty-cart-message');
+        const cartTotal = document.getElementById('cart-total');
+        const cartCount = document.getElementById('cart-count');
+        const checkoutBtn = document.getElementById('checkout-btn');
+        
+        let cart = [];
+        
+        // Toggle cart modal
+        cartBtn.addEventListener('click', () => {
+            cartModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeCart.addEventListener('click', () => {
+            cartModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+        
+        continueShopping.addEventListener('click', () => {
+            cartModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Add to cart functionality
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const id = button.getAttribute('data-id');
+                const name = button.getAttribute('data-name');
+                const price = parseInt(button.getAttribute('data-price'));
+                
+                // Check if item already in cart
+                const existingItem = cart.find(item => item.id === id);
+                
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({
+                        id,
+                        name,
+                        price,
+                        quantity: 1
+                    });
+                }
+                
+                updateCart();
+                
+                // Show success notification
+                const notification = document.createElement('div');
+                notification.className = 'fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded shadow-lg flex items-center';
+                notification.innerHTML = `
+                    <i class="fas fa-check-circle mr-2"></i>
+                    <span>Produit ajouté au panier</span>
+                `;
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.classList.add('opacity-0', 'translate-x-full', 'transition-all', 'duration-300');
+                    setTimeout(() => notification.remove(), 300);
+                }, 2000);
+            });
+        });
+        
+        // Update cart UI
+        function updateCart() {
+            // Update cart count
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
+            
+            // Update cart items
+            cartItemsContainer.innerHTML = '';
+            
+            if (cart.length === 0) {
+                emptyCartMessage.classList.remove('hidden');
+                checkoutBtn.disabled = true;
+            } else {
+                emptyCartMessage.classList.add('hidden');
+                checkoutBtn.disabled = false;
+                
+                cart.forEach(item => {
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'cart-item bg-gray-50 p-4 rounded-lg flex justify-between items-center';
+                    cartItem.innerHTML = `
+                        <div>
+                            <h4 class="font-medium">${item.name}</h4>
+                            <p class="text-sm text-gray-500">${item.price.toLocaleString()} FCFA × ${item.quantity}</p>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="font-semibold mr-4">${(item.price * item.quantity).toLocaleString()} FCFA</span>
+                            <button class="remove-item text-red-500 hover:text-red-700" data-id="${item.id}">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    `;
+                    cartItemsContainer.appendChild(cartItem);
+                });
+                
+                // Add event listeners to remove buttons
+                document.querySelectorAll('.remove-item').forEach(button => {
+                    button.addEventListener('click', () => {
+                        const id = button.getAttribute('data-id');
+                        cart = cart.filter(item => item.id !== id);
+                        updateCart();
+                    });
+                });
+            }
+            
+            // Update cart total
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            cartTotal.textContent = `${total.toLocaleString()} FCFA`;
+        }
+        
+        // Checkout button
+        checkoutBtn.addEventListener('click', () => {
+            alert('Merci pour votre commande! Un agent vous contactera bientôt pour finaliser la transaction.');
+            cart = [];
+            updateCart();
+            cartModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Contact form submission
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send the data to a server
+            console.log({ name, email, phone, message });
+            
+            // Show success message
+            alert('Merci pour votre message! Nous vous contacterons bientôt.');
+            
+            // Reset form
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>
